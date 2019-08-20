@@ -34,9 +34,9 @@ class Header_Footer_Composer_Widgets {
 	public function add_elementor_widget_categories( $elements_manager ) {
 	
 		$elements_manager->add_category(
-			'metric-themes-widgets',
+			'hfc-elementor-widgets',
 			[
-				'title' => __( 'MetricThemes Widgets', 'plugin-name' ),
+				'title' => __( 'Header Footer Composer', 'plugin-name' ),
 				'icon' => 'fa fa-plug',
 			]
 		);
@@ -48,10 +48,12 @@ class Header_Footer_Composer_Widgets {
 
 		// We check if the Elementor plugin has been installed / activated.
 		if ( defined( 'ELEMENTOR_PATH' ) && class_exists( 'Elementor\Widget_Base' ) ) {
-			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/mt-title.php';				
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-sitetitle.php';
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-sitelogo.php';
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-navmenu.php';
 		}
 
-	}
+	}	
 	
 
 }
