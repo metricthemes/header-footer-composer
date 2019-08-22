@@ -135,6 +135,33 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);						
 		
+		$this->add_responsive_control(
+			'hfc_nav_menu_dropdown_align', [
+				'label'			 =>esc_html__( 'Submenu Alignment', 'open-commerce-pro' ),
+				'type'			 => Controls_Manager::CHOOSE,
+				'options'		 => [
+
+					'left'		 => [
+						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-left',
+					],
+					'center'	 => [
+						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-center',
+					],
+					'right'		 => [
+						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-right',
+					],
+				],
+				'default'		 => '',
+                'selectors' => [
+                    '{{WRAPPER}} .hfc-navbar > ul li ul' => 'text-align: {{VALUE}};',
+                ],
+			]
+		);		
+		
+		
 		
 		$this->add_control(
 			'hfc_nav_menu_line_two',
@@ -187,6 +214,16 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				],
 			]
 		);	
+		
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'hfc_nav_menu_typography',
+				'label' => __( 'Typography', 'plugin-domain' ),
+				'selector' => '{{WRAPPER}} .hfc-navbar > ul > li > a',
+			]
+		);
+		
 		
 		$this->add_control(
 			'hfc_nav_menu_line_three',
@@ -244,10 +281,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Hover Link Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar > ul > li > a:hover' => 'color: {{VALUE}}',
 				],
@@ -259,10 +292,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Hover Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar > ul > li > a:hover' => 'background-color: {{VALUE}}',
 				],
@@ -282,10 +311,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Active Link Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar > ul > li.current-menu-item > a' => 'color: {{VALUE}}',
 				],
@@ -297,10 +322,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Active Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar > ul > li.current-menu-item > a' => 'background-color: {{VALUE}}',
 				],
@@ -364,6 +385,15 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);			
 		
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'hfc_nav_menu_dropdown_typography',
+				'label' => __( 'Typography', 'plugin-domain' ),
+				'selector' => '{{WRAPPER}} .hfc-navbar ul ul li a',
+			]
+		);		
+		
 		$this->add_control(
 			'hfc_nav_menu_line_eight',
 			[
@@ -420,10 +450,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Hover Link Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar ul ul li a:hover' => 'color: {{VALUE}}',
 				],
@@ -435,10 +461,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Hover Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar ul ul li a:hover' => 'background-color: {{VALUE}}',
 				],
@@ -458,10 +480,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Active Link Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar ul ul li.current-menu-item a' => 'color: {{VALUE}}',
 				],
@@ -473,10 +491,6 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Active Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar ul ul li.current-menu-item a' => 'background-color: {{VALUE}}',
 				],
