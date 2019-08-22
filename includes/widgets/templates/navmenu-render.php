@@ -8,3 +8,4 @@
  * @package    Header_Footer_Composer
  * @subpackage Header_Footer_Composer/includes
  */
+ ?>

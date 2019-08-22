@@ -73,7 +73,9 @@ class Header_Footer_Composer_Public {
 		 * class.
 		 */
 
+		wp_enqueue_style( 'hfc-navmenu', plugin_dir_url( __FILE__ ) . 'css/hfc-navmenu.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/header-footer-composer-public.css', array(), $this->version, 'all' );
+	
 
 	}
 
@@ -96,6 +98,7 @@ class Header_Footer_Composer_Public {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'hfc-navmenu', plugin_dir_url( __FILE__ ) . 'js/hfc-navmenu.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/header-footer-composer-public.js', array( 'jquery' ), $this->version, false );
 
 	}

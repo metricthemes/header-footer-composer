@@ -111,7 +111,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				],
 				'default'		 => '',
                 'selectors' => [
-                    '{{WRAPPER}} .mt-heading' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .hfc-navbar > ul.hfc-nav-menu-top' => 'text-align: {{VALUE}};',
                 ],
 			]
 		);		
@@ -121,16 +121,20 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Dropdown Icon', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'classic',
+				'default' => '\f0d7',
 				'options' => [
-					'classic'  => __( 'Classic', 'plugin-domain' ),
-					'chevron' => __( 'Chevron', 'plugin-domain' ),
-					'angle' => __( 'Angle', 'plugin-domain' ),					
-					'plus' => __( 'Plus', 'plugin-domain' ),										
-					'none' => __( 'None', 'plugin-domain' ),															
+					'\f0d7'  => __( 'Classic', 'plugin-domain' ),
+					'\f078' => __( 'Chevron', 'plugin-domain' ),
+					'\f107' => __( 'Angle', 'plugin-domain' ),					
+					'\f067' => __( 'Plus', 'plugin-domain' ),										
+					'' => __( 'None', 'plugin-domain' ),															
 				],
+                'selectors' => [
+                    '{{WRAPPER}} .hfc-navbar > ul > li.has-sub > a:after' => 'content: "{{VALUE}}";',
+                ],								
 			]
-		);				
+		);						
+		
 		
 		$this->add_control(
 			'hfc_nav_menu_line_two',
@@ -159,45 +163,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'none' => __( 'None', 'plugin-domain' ),															
 				],
 			]
-		);				
-		
-		$this->add_control(
-			'hfc_nav_menu_mobile_width',
-			[
-				'label' => __( 'Enable Full Width', 'plugin-domain' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'your-plugin' ),
-				'label_off' => __( 'Hide', 'your-plugin' ),
-				'return_value' => '1',
-				'default' => '1',
-			]
-		);	
-		
-		$this->add_responsive_control(
-			'hfc_nav_menu_toggle_align', [
-				'label'			 =>esc_html__( 'Alignment', 'open-commerce-pro' ),
-				'type'			 => Controls_Manager::CHOOSE,
-				'options'		 => [
-
-					'left'		 => [
-						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
-						'icon'	 => 'fa fa-align-left',
-					],
-					'center'	 => [
-						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
-						'icon'	 => 'fa fa-align-center',
-					],
-					'right'		 => [
-						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
-						'icon'	 => 'fa fa-align-right',
-					],
-				],
-				'default'		 => '',
-                'selectors' => [
-                    '{{WRAPPER}} .mt-heading' => 'text-align: {{VALUE}};',
-                ],
-			]
-		);			
+		);										
 									
 
 		$this->end_controls_section();
@@ -215,12 +181,9 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Navbar Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'default' => '#191919',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar' => 'background-color: {{VALUE}}',
 				],
 			]
 		);	
@@ -248,12 +211,9 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Link Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -263,12 +223,9 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li > a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);				
@@ -292,7 +249,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li > a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -307,7 +264,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li > a:hover' => 'background-color: {{VALUE}}',
 				],
 			]
 		);		
@@ -330,7 +287,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li.current-menu-item > a' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -345,7 +302,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar > ul > li.current-menu-item > a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);		
@@ -359,61 +316,31 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'type' => \Elementor\Controls_Manager::DIVIDER,
 			]
-		);				
-		
-		$this->add_control(
-			'hfc_nav_menu_style_horizontal_padding',
-			[
-				'label' => __( 'Horizontal Padding', 'plugin-domain' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-						'step' => 5,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
 		);		
 		
-		$this->add_control(
-			'hfc_nav_menu_style_vertical_padding',
+		$this->add_responsive_control(
+			'hfc_nav_menu_style_padding',
 			[
-				'label' => __( 'Vertical Padding', 'plugin-domain' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-						'step' => 5,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
+				'label' => __( 'Padding', 'plugin-domain' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-navbar > ul > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
-		);				
+		);
+		
+		$this->add_responsive_control(
+			'hfc_nav_menu_style_margin',
+			[
+				'label' => __( 'Margin', 'plugin-domain' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .hfc-navbar > ul > li > a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);						
 
 		$this->end_controls_section();
 		
@@ -424,6 +351,25 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				'tab'	 => Controls_Manager::TAB_STYLE,
 			]
 		);				
+		
+		$this->add_control(
+			'hfc_nav_menu_dropdown_bgcolor',
+			[
+				'label' => __( 'Dropdown Background Color', 'plugin-domain' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#191919',
+				'selectors' => [
+					'{{WRAPPER}} .hfc-navbar ul ul' => 'background-color: {{VALUE}}',
+				],
+			]
+		);			
+		
+		$this->add_control(
+			'hfc_nav_menu_line_eight',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);			
 		
 		$this->start_controls_tabs(
 			'hfc_nav_menu_dropdown_style_tabs'
@@ -440,13 +386,10 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			'hfc_nav_menu_dropdown_style_normal_color',
 			[
 				'label' => __( 'Link Color', 'plugin-domain' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'type' => \Elementor\Controls_Manager::COLOR,				
+				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li a' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -456,12 +399,9 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Link Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'default' => '#191919',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);				
@@ -485,7 +425,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -500,7 +440,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li a:hover' => 'background-color: {{VALUE}}',
 				],
 			]
 		);		
@@ -523,7 +463,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li.current-menu-item a' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -538,7 +478,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar ul ul li.current-menu-item a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);		
@@ -559,7 +499,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'name' => 'hfc_nav_menu_dropdown_style_link_border',
 				'label' => __( 'Border', 'plugin-domain' ),
-				'selector' => '{{WRAPPER}} .wrapper',
+				'selector' => '{{WRAPPER}} .hfc-navbar ul ul',
 			]
 		);
 		
@@ -570,81 +510,34 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .your-class' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);		
-
-
-		$this->add_control(
-			'hfc_nav_menu_dropdown_style_horizontal_padding',
-			[
-				'label' => __( 'Horizontal Padding', 'plugin-domain' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-						'step' => 5,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-navbar ul ul' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);		
 		
-		$this->add_control(
-			'hfc_nav_menu_dropdown_style_vertical_padding',
+		$this->add_responsive_control(
+			'hfc_nav_menu_dropdown_style_padding',
 			[
-				'label' => __( 'Vertical Padding', 'plugin-domain' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-						'step' => 5,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
+				'label' => __( 'Padding', 'plugin-domain' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-navbar ul ul li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
-		);		
+		);
 		
-		$this->add_control(
-			'hfc_nav_menu_line_six',
+		$this->add_responsive_control(
+			'hfc_nav_menu_dropdown_style_margin',
 			[
-				'type' => \Elementor\Controls_Manager::DIVIDER,
+				'label' => __( 'Margin', 'plugin-domain' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .hfc-navbar ul ul li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
-		);						
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'hfc_nav_menu_dropdown_link_divider',
-				'label' => __( 'Divider', 'plugin-domain' ),
-				'selector' => '{{WRAPPER}} .wrapper',
-			]
-		);		
+		);								
 				
 		$this->end_controls_section();		
 		
@@ -656,28 +549,14 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);				
 		
-		$this->start_controls_tabs(
-			'hfc_nav_menu_toggle_style_tabs'
-		);		
-		
-		$this->start_controls_tab(
-			'hfc_nav_menu_toggle_style_normal_tab',
-			[
-				'label' => __( 'Normal', 'plugin-name' ),
-			]
-		);		
-		
 		$this->add_control(
 			'hfc_nav_menu_toggle_style_normal_color',
 			[
 				'label' => __( 'Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
+				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar #menu-button' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -687,57 +566,11 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background Color', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
 				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar #menu-button' => 'background-color: {{VALUE}}',
 				],
 			]
 		);				
-		
-		$this->end_controls_tab();		
-		
-		$this->start_controls_tab(
-			'hfc_nav_menu_toggle_style_normal_tab_hover_tab',
-			[
-				'label' => __( 'Hover', 'plugin-name' ),
-			]
-		);		
-		
-		$this->add_control(
-			'hfc_nav_menu_toggle_style_hover_color',
-			[
-				'label' => __( 'Color', 'plugin-domain' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
-				],
-			]
-		);		
-		
-		$this->add_control(
-			'hfc_nav_menu_toggle_style_hover_bgcolor',
-			[
-				'label' => __( 'Background Color', 'plugin-domain' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Scheme_Color::get_type(),
-					'value' => \Elementor\Scheme_Color::COLOR_1,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'color: {{VALUE}}',
-				],
-			]
-		);		
-		$this->end_controls_tab();						
-
-		$this->end_controls_tabs();		
 		
 		
 		$this->add_control(
@@ -756,8 +589,8 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 1000,
-						'step' => 5,
+						'max' => 500,
+						'step' => 1,
 					],
 					'%' => [
 						'min' => 0,
@@ -765,21 +598,54 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'unit' => '%',
-					'size' => 50,
+					'unit' => 'px',
+					'size' => 22,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-navbar #menu-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+		
+		$this->add_control(
+			'hfc_nav_menu_toggle_style_align', [
+				'label'			 =>esc_html__( 'Alignment', 'open-commerce-pro' ),
+				'type'			 => Controls_Manager::CHOOSE,
+				'options'		 => [
+
+					'left'		 => [
+						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-left',
+					],
+					'none'	 => [
+						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-center',
+					],
+					'right'		 => [
+						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
+						'icon'	 => 'fa fa-align-right',
+					],
+				],
+				'default'		 => 'none',
+                'selectors' => [
+                    '{{WRAPPER}} .hfc-navbar #menu-button' => 'float: {{VALUE}};',
+                ],
+			]
+		);			
+		
+		$this->add_control(
+			'hfc_nav_menu_line_nine',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);					
 		
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'hfc_nav_menu_toggle_style_border',
 				'label' => __( 'Toggle Border', 'plugin-domain' ),
-				'selector' => '{{WRAPPER}} .wrapper',
+				'selector' => '{{WRAPPER}} .hfc-navbar #menu-button',
 			]
 		);		
 		
@@ -790,10 +656,22 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .your-class' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-navbar #menu-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
-		);				
+		);	
+		
+		$this->add_responsive_control(
+			'hfc_nav_menu_toggle_style_padding',
+			[
+				'label' => __( 'Padding', 'plugin-domain' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .hfc-navbar #menu-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);										
 		
 		
 		$this->end_controls_section();		
@@ -803,8 +681,21 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings();
-		
-		
+		$hfc_menu_id = $settings[ 'hfc_nav_menu_ed' ];				
+	?>		    
+    
+	        <nav id="hfc-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">            
+				<?php
+                  wp_nav_menu(array(
+                    'menu'	  => $hfc_menu_id,
+                    'depth'   => 0,
+                    'container_class' => 'hfc-navbar',
+                    'menu_class' => 'hfc-nav-menu-top'
+                    ));
+                ?>
+            </nav>                
+
+	<?php		
 	}
 
 	protected function _content_template() {
