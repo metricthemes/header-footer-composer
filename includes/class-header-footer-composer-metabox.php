@@ -27,7 +27,7 @@ class Header_Footer_Composer_Meta_Box {
 		
 		public function block_type_add_meta_box() {
 			add_meta_box(
-				'block_type-block-type',
+				'header-footer-composer-meta-box',
 				__( 'Block Type', 'block_type' ),
 				array( $this, 'block_type_html'),
 				'mnk_block',
@@ -40,15 +40,20 @@ class Header_Footer_Composer_Meta_Box {
 		public function block_type_html( $post) {
 			wp_nonce_field( '_block_type_nonce', 'block_type_nonce' ); ?>
 		
-			<p>
-				<label for="block_type_choose_block_type"><?php _e( 'Choose Block type', 'block_type' ); ?></label><br>
+			<div class="hfc-metabox">
+				<div class="hfc-meta-label">
+                <label for="block_type_choose_block_type"><?php _e( 'Choose Block type', 'block_type' ); ?></label>
+                </div>
+				<div class="hfc-meta-input">                
 				<select name="block_type_choose_block_type" id="block_type_choose_block_type">
 					<option value="" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === '' ) ? 'selected' : '' ?>>Select Block Type</option>
 					<option value="header" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'header' ) ? 'selected' : '' ?>>Header</option>
 					<option value="footer" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'footer' ) ? 'selected' : '' ?>>Footer</option>
 					<option value="custom" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'custom' ) ? 'selected' : '' ?>>Custom Section</option>
 				</select>
-			</p><?php
+                </div>
+			</div>
+			<?php
 		}
 		
 		public function block_type_save( $post_id ) {

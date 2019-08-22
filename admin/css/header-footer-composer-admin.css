@@ -2,3 +2,51 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ 
+#header-footer-composer-meta-box .inside {
+margin:0px;
+padding:0px;
+}
+.hfc-metabox {
+overflow:hidden;
+}
+.hfc-metabox .hfc-meta-label {
+vertical-align: top;
+float:left;
+width:23%;
+padding: 20px;
+background-color:#F9F9F9;
+border-right:1px solid #E1E1E1;
+}
+.hfc-metabox .hfc-meta-label label {
+font-weight:bold;
+}
+.hfc-metabox .hfc-meta-input {
+vertical-align: top;
+float: left;
+width: 62%;
+margin: 0;
+padding: 15px 0 0 20px;
+}
+.hfc-metabox .hfc-meta-input select {
+width:100%;
+}
+
+@media (min-width: 320px) and (max-width: 850px) {
+	.hfc-metabox .hfc-meta-label {
+	width:100%;
+	float:none;
+	background:none;
+	border:none;
+	padding:10px;
+	}
+	.hfc-metabox .hfc-meta-input {
+	width: 100%;
+	float: none;
+	padding: 10px 0px;
+	}	
+	.hfc-metabox .hfc-meta-input select {
+	width:95%;
+	margin-left:10px;
+	}	
+}
