@@ -6,6 +6,19 @@ if ( !defined( 'ABSPATH' ) )
 
 class HFC_Overlay_Nav_Widget extends Widget_Base {
 
+	public function __construct($data = [], $args = null) {	
+		parent::__construct($data, $args);	
+		
+		wp_enqueue_style( 'hfc-overlay-nav-style', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/css/hfc-overlay-nav.css', [ 'elementor-frontend' ], HEADER_FOOTER_COMPOSER_VERSION, 'all' );
+		wp_enqueue_script( 'modernizr-custom', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/modernizr.custom.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );
+		wp_enqueue_script( 'jquery-classie', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/classie.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );
+		wp_enqueue_script( 'hfc-overlay-nav', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/hfc-overlay-nav.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );				
+	}
+	
+	public function get_script_depends() {
+		return [ 'hfc-overlay-nav-style,modernizr-custom,jquery-classie,hfc-overlay-nav' ];
+	}	
+
 	public function get_name() {
 		return 'hfc-overlay-nav';
 	}

@@ -6,6 +6,17 @@ if ( !defined( 'ABSPATH' ) )
 
 class HFC_Nav_Menu_Widget extends Widget_Base {
 
+
+	public function __construct($data = [], $args = null) {	
+		parent::__construct($data, $args);	
+		wp_enqueue_style( 'hfc-navmenu-style', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/css/hfc-navmenu.css', [ 'elementor-frontend' ], HEADER_FOOTER_COMPOSER_VERSION, 'all' );				  	
+		wp_enqueue_script( 'hfc-navmenu-script', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/hfc-navmenu.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );		
+	}
+	
+	public function get_script_depends() {
+		return [ 'hfc-navmenu-style, hfc-navmenu-script' ];
+	}	
+
 	public function get_name() {
 		return 'hfc-nav-menu';
 	}
@@ -20,7 +31,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 
 	public function get_categories() {
         return [ 'hfc-elementor-widgets' ];
-	}
+	}	
 	
 	/*
 	*
