@@ -1,15 +1,4 @@
 <?php
-
-/**
- * Fired during plugin deactivation
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/includes
- */
-
 /**
  * Fired during plugin deactivation.
  *

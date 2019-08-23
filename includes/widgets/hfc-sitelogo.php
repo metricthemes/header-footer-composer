@@ -11,7 +11,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Site Logo', 'open-commerce-pro' );
+		return esc_html__( 'Site Logo', 'header-footer-composer' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'hfc_logo_section_tab', [
-				'label' => esc_html__( 'Site Logo', 'open-commerce-pro' ),
+				'label' => esc_html__( 'Site Logo', 'header-footer-composer' ),
 			]
 		);
 		
@@ -34,26 +34,26 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 			[
 				'label' => '',
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => __( '<small>Please upload your logo from Dashboard >> Customizer >> Site Identity. Your theme must support "custom-logo" for this to work.</small>', 'plugin-name' ),				
+				'raw' => __( '<small>Please upload your logo from Dashboard >> Customizer >> Site Identity. Your theme must support "custom-logo" for this to work.</small>', 'header-footer-composer' ),				
 			]
 		);		
 		
 		$this->add_responsive_control(
 			'hfc_logo_align', [
-				'label'			 =>esc_html__( 'Alignment', 'open-commerce-pro' ),
+				'label'			 =>esc_html__( 'Alignment', 'header-footer-composer' ),
 				'type'			 => Controls_Manager::CHOOSE,
 				'options'		 => [
 
 					'left'		 => [
-						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Left', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-left',
 					],
 					'center'	 => [
-						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Center', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-center',
 					],
 					'right'		 => [
-						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Right', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-right',
 					],
 				],
@@ -68,7 +68,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 		//Title Style Section
 		$this->start_controls_section(
 			'hfc_site_logo_style', [
-				'label'	 => esc_html__( 'Logo', 'open-commerce-pro' ),
+				'label'	 => esc_html__( 'Logo', 'header-footer-composer' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -76,7 +76,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_site_logo_width',
 			[
-				'label' => __( 'Width', 'plugin-domain' ),
+				'label' => __( 'Width', 'header-footer-composer' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -104,7 +104,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'hfc_site_logo_border',
-				'label' => __( 'Border', 'plugin-domain' ),
+				'label' => __( 'Border', 'header-footer-composer' ),
 				'selector' => '{{WRAPPER}} .hfc-site-logo img',
 			]
 		);		
@@ -112,7 +112,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_site_logo_border_padding',
 			[
-				'label' => __( 'Padding', 'plugin-domain' ),
+				'label' => __( 'Padding', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -124,7 +124,7 @@ class HFC_Site_Logo_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_site_logo_border_marging',
 			[
-				'label' => __( 'Margin', 'plugin-domain' ),
+				'label' => __( 'Margin', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [

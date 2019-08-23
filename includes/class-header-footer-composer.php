@@ -1,18 +1,4 @@
 <?php
-
-/**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/includes
- */
-
 /**
  * The core plugin class.
  *
@@ -79,7 +65,7 @@ class Header_Footer_Composer {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		
-		add_action( 'admin_notices', array( $this, 'hfcmt_theme_support') );			
+		add_action( 'admin_notices', array( $this, 'hf_composer_theme_support') );			
 
 	}
 
@@ -188,10 +174,10 @@ class Header_Footer_Composer {
 
 	}
 	
-	public function hfcmt_theme_support() {	
+	public function hf_composer_theme_support() {	
 		if (! current_theme_supports('header-footer-composer')) {			
 		echo '<div class="notice notice-error is-dismissible">';
-			echo '<p>Hey, your current theme is not supported by Header Footer Composer, click <a href="#">here</a> to check out all the supported themes.</p>';
+			echo '<p>Hey, your current theme is not supported by Header Footer Composer.</p>';
 		echo '</div>';		
 		}
 	}	

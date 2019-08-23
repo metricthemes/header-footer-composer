@@ -2,16 +2,6 @@
 /**
  * The file that renders custom header and footer
  *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/includes
- */
-
-/**
- * The core plugin class.
- *
  * @since      1.0.0
  * @package    Header_Footer_Composer
  * @subpackage Header_Footer_Composer/includes
@@ -95,12 +85,12 @@ class Header_Footer_Composer_Render {
 	
 		$args = apply_filters( 'hfe_get_template_id_args', $args );
 	
-		$template = new WP_Query(
+		$layout = new WP_Query(
 			$args
 		);
 	
-		if ( $template->have_posts() ) {
-			$posts = wp_list_pluck( $template->posts, 'ID' );
+		if ( $layout->have_posts() ) {
+			$posts = wp_list_pluck( $layout->posts, 'ID' );
 			wp_cache_set( $type, $posts );
 	
 			return $posts;

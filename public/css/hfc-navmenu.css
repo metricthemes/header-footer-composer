@@ -1,3 +1,7 @@
+.hfc-navbar {
+position:relative;
+z-index:9999;
+}
 .hfc-navbar,
 .hfc-navbar ul,
 .hfc-navbar ul li,
@@ -193,29 +197,6 @@ margin-left:6px;
     width: 50px;
     /* float: right; */	
   }  
-  /*
-  .hfc-navbar #menu-button:after {
-    position: absolute;
-    top: 16px;
-    right: 17px;
-    display: block;
-    height: 9px;
-    width: 20px;
-    border-top: 3px solid #dddddd;
-    border-bottom: 3px solid #dddddd;
-    content: '';
-  }
-  .hfc-navbar #menu-button:before {
-    position: absolute;
-    top: 10px;
-    right: 17px;
-    display: block;
-    height: 3px;
-    width: 20px;
-    background: #dddddd;
-    content: '';  
-  }
-  */
   .hfc-navbar #menu-button.menu-opened:after {
     top: 23px;
     border: 0;

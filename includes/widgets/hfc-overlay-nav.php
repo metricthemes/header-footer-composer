@@ -15,8 +15,12 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		wp_enqueue_script( 'hfc-overlay-nav', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/hfc-overlay-nav.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );				
 	}
 	
+	public function get_style_depends() {
+		return [ 'hfc-overlay-nav-style' ];
+	}	
+
 	public function get_script_depends() {
-		return [ 'hfc-overlay-nav-style,modernizr-custom,jquery-classie,hfc-overlay-nav' ];
+		return [ 'modernizr-custom,jquery-classie,hfc-overlay-nav' ];
 	}	
 
 	public function get_name() {
@@ -24,7 +28,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Overlay Nav Menu', 'open-commerce-pro' );
+		return esc_html__( 'Overlay Nav Menu', 'header-footer-composer' );
 	}
 
 	public function get_icon() {
@@ -45,7 +49,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			
 			// Initate an empty array
 			$menu_options = array();
-			$menu_options['0'] = esc_attr__( 'Select a Menu', 'plugin-name' );
+			$menu_options['0'] = esc_attr__( 'Select a Menu', 'header-footer-composer' );
 			
 			if ( ! empty( $hfc_menu_ed ) ) {
 				foreach ( $hfc_menu_ed as $menu ) {
@@ -58,7 +62,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'hfcoverlay_navmenu_section_tab', [
-				'label' => esc_html__( 'Nav Menu', 'open-commerce-pro' ),
+				'label' => esc_html__( 'Nav Menu', 'header-footer-composer' ),
 			]
 		);			
 		
@@ -66,7 +70,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_ed',
 			[
-				'label' => __( 'Select Menu', 'plugin-domain' ),
+				'label' => __( 'Select Menu', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => '0',
 				'options' => $this->hfc_overlay_menu_array(),
@@ -78,27 +82,27 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			[
 				'label' => '',
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => __( '<small>Please Go to the Dashboard >> Appereance >> Menus screen to manage your menus.', 'plugin-name' ),				
+				'raw' => __( '<small>Please Go to the Dashboard >> Appereance >> Menus screen to manage your menus.', 'header-footer-composer' ),				
 			]
 		);						
 		
 		$this->add_responsive_control(
 			'hfc_overlay_nav_align', [
-				'label'			 =>esc_html__( 'Alignment', 'open-commerce-pro' ),
+				'label'			 =>esc_html__( 'Alignment', 'header-footer-composer' ),
 				'type'			 => Controls_Manager::CHOOSE,
 				'default' 		 => 'right',
 				'options'		 => [
 
 					'left'		 => [
-						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Left', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-left',
 					],
 					'none'	 => [
-						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Center', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-center',
 					],
 					'right'		 => [
-						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Right', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-right',
 					],
 				],
@@ -113,7 +117,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		
 		$this->start_controls_section(
 			'hfc_overlay_nav_style', [
-				'label'	 => esc_html__( 'Main Menu', 'open-commerce-pro' ),
+				'label'	 => esc_html__( 'Main Menu', 'header-footer-composer' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -121,7 +125,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_bgcolor',
 			[
-				'label' => __( 'Background Color', 'plugin-domain' ),
+				'label' => __( 'Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => 'rgba(153,204,51,0.9)',
 				'selectors' => [
@@ -134,7 +138,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'hfc_overlay_nav_typography',
-				'label' => __( 'Typography', 'plugin-domain' ),
+				'label' => __( 'Typography', 'header-footer-composer' ),
 				'selector' => '{{WRAPPER}} .hfc-overlay ul li a',
 			]
 		);
@@ -154,14 +158,14 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'hfc_overlay_nav_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'plugin-name' ),
+				'label' => __( 'Normal', 'header-footer-composer' ),
 			]
 		);		
 		
 		$this->add_control(
 			'hfc_overlay_nav_style_normal_color',
 			[
-				'label' => __( 'Link Color', 'plugin-domain' ),
+				'label' => __( 'Link Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -173,7 +177,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_style_normal_bgcolor',
 			[
-				'label' => __( 'Link Background Color', 'plugin-domain' ),
+				'label' => __( 'Link Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -187,14 +191,14 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'hfc_overlay_nav_style_normal_tab_hover_tab',
 			[
-				'label' => __( 'Hover', 'plugin-name' ),
+				'label' => __( 'Hover', 'header-footer-composer' ),
 			]
 		);		
 		
 		$this->add_control(
 			'hfc_overlay_nav_style_hover_color',
 			[
-				'label' => __( 'Hover Link Color', 'plugin-domain' ),
+				'label' => __( 'Hover Link Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .hfc-overlay ul li a:hover' => 'color: {{VALUE}}',
@@ -205,7 +209,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_style_hover_bgcolor',
 			[
-				'label' => __( 'Hover Link Background Color', 'plugin-domain' ),
+				'label' => __( 'Hover Link Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .hfc-overlay ul li a:hover' => 'background-color: {{VALUE}}',
@@ -226,7 +230,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_overlay_nav_style_padding',
 			[
-				'label' => __( 'Padding', 'plugin-domain' ),
+				'label' => __( 'Padding', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -238,7 +242,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_overlay_nav_style_margin',
 			[
-				'label' => __( 'Margin', 'plugin-domain' ),
+				'label' => __( 'Margin', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -252,7 +256,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		//Toggle style
 		$this->start_controls_section(
 			'hfc_overlay_nav_toggle_style', [
-				'label'	 => esc_html__( 'Toggle Button', 'open-commerce-pro' ),
+				'label'	 => esc_html__( 'Toggle Button', 'header-footer-composer' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 			]
 		);				
@@ -260,7 +264,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_toggle_style_normal_color',
 			[
-				'label' => __( 'Color', 'plugin-domain' ),
+				'label' => __( 'Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -272,7 +276,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_toggle_style_normal_bgcolor',
 			[
-				'label' => __( 'Background Color', 'plugin-domain' ),
+				'label' => __( 'Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #trigger-overlay' => 'background-color: {{VALUE}}',
@@ -291,7 +295,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_overlay_nav_toggle_style_size',
 			[
-				'label' => __( 'Size', 'plugin-domain' ),
+				'label' => __( 'Size', 'header-footer-composer' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -326,7 +330,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'hfc_overlay_nav_toggle_style_border',
-				'label' => __( 'Toggle Border', 'plugin-domain' ),
+				'label' => __( 'Toggle Border', 'header-footer-composer' ),
 				'selector' => '{{WRAPPER}} #trigger-overlay',
 			]
 		);		
@@ -334,7 +338,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_overlay_nav_toggle_style_border_radius',
 			[
-				'label' => __( 'Border Radius', 'plugin-domain' ),
+				'label' => __( 'Border Radius', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -346,7 +350,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfc_overlay_nav_toggle_style_padding',
 			[
-				'label' => __( 'Padding', 'plugin-domain' ),
+				'label' => __( 'Padding', 'header-footer-composer' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [

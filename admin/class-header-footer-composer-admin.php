@@ -1,15 +1,4 @@
 <?php
-
-/**
- * The admin-specific functionality of the plugin.
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/admin
- */
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -63,8 +52,8 @@ class Header_Footer_Composer_Admin {
 	public function hfc_register_admin_menu() {
 		add_submenu_page(
 			'themes.php',
-			__( 'HF Composer', 'header-footer-composer' ),
-			__( 'HF Composer', 'header-footer-composer' ),
+			__( 'Header Footer Composer', 'header-footer-composer' ),
+			__( 'Header Footer Composer', 'header-footer-composer' ),
 			'edit_pages',
 			'edit.php?post_type=hf_composer'
 		);

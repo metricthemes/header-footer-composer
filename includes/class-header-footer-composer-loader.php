@@ -1,15 +1,4 @@
 <?php
-
-/**
- * Register all actions and filters for the plugin
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/includes
- */
-
 /**
  * Register all actions and filters for the plugin.
  *

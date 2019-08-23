@@ -1,16 +1,6 @@
 <?php
 /**
- * The file that holds all the elementor widgets
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/includes
- */
-
-/**
- * The core plugin class.
+ * The file that registers elementor widgets.
  *
  * @since      1.0.0
  * @package    Header_Footer_Composer
@@ -36,7 +26,7 @@ class Header_Footer_Composer_Widgets {
 		$elements_manager->add_category(
 			'hfc-elementor-widgets',
 			[
-				'title' => __( 'Header Footer Composer', 'plugin-name' ),
+				'title' => __( 'Header Footer Composer', 'header-footer-composer' ),
 				'icon' => 'fa fa-plug',
 			]
 		);

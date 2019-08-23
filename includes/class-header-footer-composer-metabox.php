@@ -56,7 +56,7 @@ class Header_Footer_Composer_Meta_Box {
 		}
 		
 		public function hf_composer_meta_save( $post_id ) {		
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;			
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;				
 			if ( ! isset( $_POST['hf_composer_nonce'] ) || ! wp_verify_nonce( $_POST['hf_composer_nonce'], '_hf_composer_nonce' ) ) return;			
 			if ( ! current_user_can( 'edit_post', $post_id ) ) return;	
 		

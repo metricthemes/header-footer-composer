@@ -1,25 +1,32 @@
 <?php
-
 /**
- * The plugin bootstrap file
+ * Do not go gentle into that good night,
+ * Old age should burn and rave at close of day;
+ * Rage, rage against the dying of the light.
+ * 
+ * Though wise men at their end know dark is right,
+ * Because their words had forked no lightning they
+ * Do not go gentle into that good night.
+ *  
+ * Dylan Thomas, 1914 - 1953
+ *  
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation; either version 2 of the License,
+ * or (at your option) any later version.
  *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @link              https://metricthemes.com
- * @since             1.0.0
- * @package           Header_Footer_Composer
+ * You should have received a copy of the GNU General Public License along with this program; if not, write
+ * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA 
  *
- * @wordpress-plugin
  * Plugin Name:       Header Footer Composer for Elementor
  * Plugin URI:        https://metricthemes.com/header-footer-composer
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            MetricThemes
  * Author URI:        https://metricthemes.com
- * License:           GPL-2.0+
+ * License:           GPL-2.0+ 
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       header-footer-composer
  * Domain Path:       /languages
@@ -74,7 +81,7 @@ function hfcmt_no_elementor() {
 
 	echo '<div class="notice notice-error">';
 	/* Translators: URL to install or activate Elementor plugin. */
-	echo '<p>' . sprintf( __( 'The <strong>Header Footer Composer</strong> plugin requires <strong><a href="%s">Elementor</strong></a> plugin installed & activated.', 'header-footer-elementor' ) . '</p>', $link );
+	echo '<p>' . sprintf( __( 'The <strong>Header Footer Composer</strong> plugin requires <strong><a href="%s">Elementor</strong></a> plugin installed & activated.', 'header-footer-composer' ) . '</p>', $link );
 	echo '</div>';
 }
 

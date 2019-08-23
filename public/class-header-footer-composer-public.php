@@ -1,15 +1,4 @@
 <?php
-
-/**
- * The public-facing functionality of the plugin.
- *
- * @link       https://metricthemes.com
- * @since      1.0.0
- *
- * @package    Header_Footer_Composer
- * @subpackage Header_Footer_Composer/public
- */
-
 /**
  * The public-facing functionality of the plugin.
  *

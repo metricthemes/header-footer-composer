@@ -11,7 +11,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Site Title', 'open-commerce-pro' );
+		return esc_html__( 'Site Title', 'header-footer-composer' );
 	}
 
 	public function get_icon() {
@@ -25,17 +25,17 @@ class HFC_Site_Title_Widget extends Widget_Base {
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'hfc_title_section_tab', [
-				'label' => esc_html__( 'Site Title', 'open-commerce-pro' ),
+				'label' => esc_html__( 'Site Title', 'header-footer-composer' ),
 			]
 		);		
 		
 		$this->add_control(
 			'hfc_site_title_description_ed',
 			[
-				'label' => __( 'Show Site Description', 'plugin-domain' ),
+				'label' => __( 'Show Site Description', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'your-plugin' ),
-				'label_off' => __( 'Hide', 'your-plugin' ),
+				'label_on' => __( 'Show', 'header-footer-composer' ),
+				'label_off' => __( 'Hide', 'header-footer-composer' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -51,39 +51,39 @@ class HFC_Site_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_site_title_html',
 			[
-				'label' => __( 'HTML Tag', 'plugin-domain' ),
+				'label' => __( 'HTML Tag', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'h1',
 				'options' => [
-					'h1'  => __( 'H1', 'plugin-domain' ),
-					'h2' => __( 'H2', 'plugin-domain' ),
-					'h3' => __( 'H3', 'plugin-domain' ),
-					'h4' => __( 'H4', 'plugin-domain' ),
-					'h5' => __( 'H5', 'plugin-domain' ),
-					'h6' => __( 'H6', 'plugin-domain' ),
-					'div' => __( 'div', 'plugin-domain' ),
-					'span' => __( 'span', 'plugin-domain' ),
-					'p' => __( 'p', 'plugin-domain' ),
+					'h1'  => __( 'H1', 'header-footer-composer' ),
+					'h2' => __( 'H2', 'header-footer-composer' ),
+					'h3' => __( 'H3', 'header-footer-composer' ),
+					'h4' => __( 'H4', 'header-footer-composer' ),
+					'h5' => __( 'H5', 'header-footer-composer' ),
+					'h6' => __( 'H6', 'header-footer-composer' ),
+					'div' => __( 'div', 'header-footer-composer' ),
+					'span' => __( 'span', 'header-footer-composer' ),
+					'p' => __( 'p', 'header-footer-composer' ),
 				],
 			]
 		);											
 
 		$this->add_responsive_control(
 			'hfc_title_align', [
-				'label'			 =>esc_html__( 'Alignment', 'open-commerce-pro' ),
+				'label'			 =>esc_html__( 'Alignment', 'header-footer-composer' ),
 				'type'			 => Controls_Manager::CHOOSE,
 				'options'		 => [
 
 					'left'		 => [
-						'title'	 =>esc_html__( 'Left', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Left', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-left',
 					],
 					'center'	 => [
-						'title'	 =>esc_html__( 'Center', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Center', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-center',
 					],
 					'right'		 => [
-						'title'	 =>esc_html__( 'Right', 'open-commerce-pro' ),
+						'title'	 =>esc_html__( 'Right', 'header-footer-composer' ),
 						'icon'	 => 'fa fa-align-right',
 					],
 				],
@@ -98,7 +98,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 		//Title Style Section
 		$this->start_controls_section(
 			'hfc_site_title_style', [
-				'label'	 => esc_html__( 'Site Title', 'open-commerce-pro' ),
+				'label'	 => esc_html__( 'Site Title', 'header-footer-composer' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 			]
 		);		
@@ -107,7 +107,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_site_title_color',
 			[
-				'label' => __( 'Title Color', 'plugin-domain' ),
+				'label' => __( 'Title Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Scheme_Color::get_type(),
@@ -123,7 +123,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'hfc_site_title_typography',
-				'label' => __( 'Typography', 'plugin-domain' ),
+				'label' => __( 'Typography', 'header-footer-composer' ),
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .hfc-site-title a',
 			]
@@ -134,7 +134,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 		//Site Description Style Section
 		$this->start_controls_section(
 			'hfc_site_description_style', [
-				'label'	 => esc_html__( 'Site Description', 'open-commerce-pro' ),
+				'label'	 => esc_html__( 'Site Description', 'header-footer-composer' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 				'condition' => [
                     'hfc_site_title_description_ed' => 'yes',
@@ -146,7 +146,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'hfc_site_description_color',
 			[
-				'label' => __( 'Color', 'plugin-domain' ),
+				'label' => __( 'Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Scheme_Color::get_type(),
@@ -162,7 +162,7 @@ class HFC_Site_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'hfc_site_description_typography',
-				'label' => __( 'Typography', 'plugin-domain' ),
+				'label' => __( 'Typography', 'header-footer-composer' ),
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .hfc-site-title p.site-description',
 			]
