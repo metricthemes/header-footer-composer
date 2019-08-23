@@ -167,16 +167,17 @@ class Header_Footer_Composer {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'hfc_register_admin_menu' );				
 			
 		$plugin_post_type = new Header_Footer_Composer_Post_Type( $this->get_plugin_name(), $this->get_version() );				
-		$this->loader->add_action( 'init', $plugin_post_type, 'mnk_block_register_post_type' );		
+		$this->loader->add_action( 'init', $plugin_post_type, 'hf_composer_register_post_type' );		
 		
 		$plugin_meta_box = new Header_Footer_Composer_Meta_Box( $this->get_plugin_name(), $this->get_version() );				
-		$this->loader->add_action( 'add_meta_boxes', $plugin_meta_box, 'block_type_add_meta_box' );
-		$this->loader->add_action( 'save_post', $plugin_meta_box, 'block_type_save' );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_meta_box, 'hf_composer_add_meta_box' );
+		$this->loader->add_action( 'save_post', $plugin_meta_box, 'hf_composer_meta_save' );
 		
 		$plugin_render = new Header_Footer_Composer_Render( $this->get_plugin_name(), $this->get_version() );				
-		$this->loader->add_action( 'template_redirect', $plugin_render, 'block_template_frontend');
+		$this->loader->add_action( 'template_redirect', $plugin_render, 'hf_composer_layout_frontend');
 		$this->loader->add_filter( 'single_template', $plugin_render, 'load_canvas_template');		
 		$this->loader->add_action( 'template_redirect', $plugin_render, 'remove_header', 10 );		
 		$this->loader->add_action('munk_header', $plugin_render, 'new_header', 10);		

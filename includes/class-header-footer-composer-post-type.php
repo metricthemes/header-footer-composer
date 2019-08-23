@@ -21,51 +21,51 @@ class Header_Footer_Composer_Post_Type {
 
 	/**
 	 *
-	 * Registring the post type for creating header, footer and blocks
+	 * Registring the post type for creating header, footer and custom layout
 	 * @post_type = hfc_elementor
 	 *
 	 * @since    1.0.0
 	 */
-	public function mnk_block_register_post_type() {
+	public function hf_composer_register_post_type() {
 
 		$labels = array(
-			'name'                  => _x( 'Blocks', 'Post Type General Name', 'text_domain' ),
-			'singular_name'         => _x( 'Block', 'Post Type Singular Name', 'text_domain' ),
-			'menu_name'             => __( 'Blocks', 'text_domain' ),
-			'name_admin_bar'        => __( 'Block', 'text_domain' ),
-			'archives'              => __( 'Item Archives', 'text_domain' ),
-			'attributes'            => __( 'Item Attributes', 'text_domain' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-			'all_items'             => __( 'All Items', 'text_domain' ),
-			'add_new_item'          => __( 'Add New Item', 'text_domain' ),
-			'add_new'               => __( 'Add New', 'text_domain' ),
-			'new_item'              => __( 'New Item', 'text_domain' ),
-			'edit_item'             => __( 'Edit Item', 'text_domain' ),
-			'update_item'           => __( 'Update Item', 'text_domain' ),
-			'view_item'             => __( 'View Item', 'text_domain' ),
-			'view_items'            => __( 'View Items', 'text_domain' ),
-			'search_items'          => __( 'Search Item', 'text_domain' ),
+			'name'                  => _x( 'Header Footer Layout', 'Post Type General Name', 'text_domain' ),
+			'singular_name'         => _x( 'Header Footer Layout', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'             => __( 'Header Footer Layouts', 'text_domain' ),
+			'name_admin_bar'        => __( 'Header Footer Layout', 'text_domain' ),
+			'archives'              => __( 'Layout Archives', 'text_domain' ),
+			'attributes'            => __( 'Layout Attributes', 'text_domain' ),
+			'parent_item_colon'     => __( 'Parent Layout:', 'text_domain' ),
+			'all_items'             => __( 'All Layouts', 'text_domain' ),
+			'add_new_item'          => __( 'Add New Layout', 'text_domain' ),
+			'add_new'               => __( 'Add New Layout', 'text_domain' ),
+			'new_item'              => __( 'New Layout', 'text_domain' ),
+			'edit_item'             => __( 'Edit Layout', 'text_domain' ),
+			'update_item'           => __( 'Update Layout', 'text_domain' ),
+			'view_item'             => __( 'View Layout', 'text_domain' ),
+			'view_items'            => __( 'View Layouts', 'text_domain' ),
+			'search_items'          => __( 'Search Layout', 'text_domain' ),
 			'not_found'             => __( 'Not found', 'text_domain' ),
 			'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
 			'featured_image'        => __( 'Featured Image', 'text_domain' ),
 			'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
 			'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
 			'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
-			'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
-			'items_list'            => __( 'Items list', 'text_domain' ),
-			'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
-			'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+			'insert_into_item'      => __( 'Insert into Layout', 'text_domain' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this Layout', 'text_domain' ),
+			'items_list'            => __( 'Layouts list', 'text_domain' ),
+			'items_list_navigation' => __( 'Layouts list navigation', 'text_domain' ),
+			'filter_items_list'     => __( 'Filter layouts list', 'text_domain' ),
 		);
 		$args = array(
-			'label'                 => __( 'Block', 'text_domain' ),
-			'description'           => __( 'Elementor Custom Block Builder', 'text_domain' ),
+			'label'                 => __( 'HF Layout', 'text_domain' ),
+			'description'           => __( 'Header Footer Composer for Elementor', 'text_domain' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'elementor' ),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
-			'show_in_menu'          => true,
+			'show_in_menu'          => false,
 			'menu_position'         => 5,
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
@@ -78,7 +78,7 @@ class Header_Footer_Composer_Post_Type {
 			'show_in_rest'          => true,
 		);
 
-		register_post_type( 'mnk_block', $args );
+		register_post_type( 'hf_composer', $args );
 	}
 	
 	

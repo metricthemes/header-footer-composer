@@ -14,7 +14,7 @@
  
 class Header_Footer_Composer_Meta_Box {
 
-		public function block_type_get_meta( $value ) {
+		public function hf_composer_get_meta( $value ) {
 			global $post;
 		
 			$field = get_post_meta( $post->ID, $value, true );
@@ -25,44 +25,43 @@ class Header_Footer_Composer_Meta_Box {
 			}
 		}
 		
-		public function block_type_add_meta_box() {
+		public function hf_composer_add_meta_box() {
 			add_meta_box(
 				'header-footer-composer-meta-box',
-				__( 'Block Type', 'block_type' ),
-				array( $this, 'block_type_html'),
-				'mnk_block',
+				__( 'Layout Type', 'header-footer-composer' ),
+				array( $this, 'hf_composer_meta_html'),
+				'hf_composer',
 				'normal',
 				'high'
 			);
 		}
 				
 		
-		public function block_type_html( $post) {
-			wp_nonce_field( '_block_type_nonce', 'block_type_nonce' ); ?>
+		public function hf_composer_meta_html( $post) {
+			wp_nonce_field( '_hf_composer_nonce', 'hf_composer_nonce' ); ?>
 		
 			<div class="hfc-metabox">
 				<div class="hfc-meta-label">
-                <label for="block_type_choose_block_type"><?php _e( 'Choose Block type', 'block_type' ); ?></label>
+                <label for="hf_composer_layout_type"><?php echo esc_html( 'Choose Layout type', 'header-footer-composer' ); ?></label>
                 </div>
 				<div class="hfc-meta-input">                
-				<select name="block_type_choose_block_type" id="block_type_choose_block_type">
-					<option value="" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === '' ) ? 'selected' : '' ?>>Select Block Type</option>
-					<option value="header" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'header' ) ? 'selected' : '' ?>>Header</option>
-					<option value="footer" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'footer' ) ? 'selected' : '' ?>>Footer</option>
-					<option value="custom" <?php echo (array( $this, 'block_type_get_meta')( 'block_type_choose_block_type' ) === 'custom' ) ? 'selected' : '' ?>>Custom Section</option>
+				<select name="hf_composer_layout_type" id="hf_composer_layout_type">
+					<option value="" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === '' ) ? 'selected' : '' ?>><?php echo esc_html('Select Layout Type', 'header-footer-composer'); ?></option>
+					<option value="header" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === 'header' ) ? 'selected' : '' ?>><?php echo esc_html('Header', 'header-footer-composer'); ?></option>
+					<option value="footer" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === 'footer' ) ? 'selected' : '' ?>><?php echo esc_html('Footer', 'header-footer-composer'); ?></option>
 				</select>
                 </div>
 			</div>
 			<?php
 		}
 		
-		public function block_type_save( $post_id ) {
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-			if ( ! isset( $_POST['block_type_nonce'] ) || ! wp_verify_nonce( $_POST['block_type_nonce'], '_block_type_nonce' ) ) return;
+		public function hf_composer_meta_save( $post_id ) {		
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;			
+			if ( ! isset( $_POST['hf_composer_nonce'] ) || ! wp_verify_nonce( $_POST['hf_composer_nonce'], '_hf_composer_nonce' ) ) return;			
 			if ( ! current_user_can( 'edit_post', $post_id ) ) return;	
 		
-			if ( isset( $_POST['block_type_choose_block_type'] ) )
-				update_post_meta( $post_id, 'block_type_choose_block_type', esc_attr( $_POST['block_type_choose_block_type'] ) );
+			if ( isset( $_POST['hf_composer_layout_type'] ) )
+				update_post_meta( $post_id, 'hf_composer_layout_type', esc_attr( $_POST['hf_composer_layout_type'] ) );				
 		}
 		
 		

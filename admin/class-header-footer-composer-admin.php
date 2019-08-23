@@ -53,6 +53,22 @@ class Header_Footer_Composer_Admin {
 		$this->version = $version;
 
 	}
+	
+	/**
+	 * Register the admin menu for Header Footer Composer.
+	 *
+	 * @since  1.0.0
+	 * 
+	 */
+	public function hfc_register_admin_menu() {
+		add_submenu_page(
+			'themes.php',
+			__( 'HF Composer', 'header-footer-composer' ),
+			__( 'HF Composer', 'header-footer-composer' ),
+			'edit_pages',
+			'edit.php?post_type=hf_composer'
+		);
+	}	
 
 	/**
 	 * Register the stylesheets for the admin area.

@@ -25,8 +25,8 @@ class Header_Footer_Composer_Render {
 	 *
 	 * @since  1.0.0
 	 */ 
-	public function block_template_frontend() {
-		if ( is_singular( 'mnk_block' ) && ! current_user_can( 'edit_posts' ) ) {
+	public function hf_composer_layout_frontend() {
+		if ( is_singular( 'hf_composer' ) && ! current_user_can( 'edit_posts' ) ) {
 			wp_redirect( site_url(), 301 );
 			die;
 		}
@@ -44,7 +44,7 @@ class Header_Footer_Composer_Render {
 	
 		global $post;
 	
-		if ( 'mnk_block' == $post->post_type ) {
+		if ( 'hf_composer' == $post->post_type ) {
 	
 			$elementor_2_0_canvas = ELEMENTOR_PATH . '/modules/page-templates/templates/canvas.php';
 	
@@ -75,8 +75,8 @@ class Header_Footer_Composer_Render {
 		}
 	
 		$args = array(
-			'post_type'    => 'mnk_block',
-			'meta_key'     => 'block_type_choose_block_type',
+			'post_type'    => 'hf_composer',
+			'meta_key'     => 'hf_composer_layout_type',
 			'meta_value'   => $type,
 			'meta_type'    => 'post',
 			'meta_compare' => '>=',
@@ -85,7 +85,7 @@ class Header_Footer_Composer_Render {
 			'meta_query'   => array(
 				'relation' => 'OR',
 				array(
-					'key'     => 'block_type_choose_block_type',
+					'key'     => 'hf_composer_layout_type',
 					'value'   => $type,
 					'compare' => '==',
 					'type'    => 'post',
