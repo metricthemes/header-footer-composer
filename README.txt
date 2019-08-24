@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== header-footer-composer ===
 Contributors: metricthemes, tajim
 Donate link: https://metricthemes.com
 Tags: header, footer, custom header designer, footer builder, elementor, template builder, page builder, landing page header
