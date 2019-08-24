@@ -21,7 +21,7 @@
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA 
  *
  * Plugin Name:       Header Footer Composer for Elementor
- * Plugin URI:        https://metricthemes.com/header-footer-composer
+ * Plugin URI:        https://github.com/metricthemes/header-footer-composer
  * Description:       Design custom headers and footers for your site using Elementor Page builder.
  * Version:           1.0.0
  * Author:            MetricThemes

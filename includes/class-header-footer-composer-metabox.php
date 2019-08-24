@@ -13,18 +13,7 @@
  */
  
 class Header_Footer_Composer_Meta_Box {
-
-		public function hf_composer_get_meta( $value ) {
-			global $post;
-		
-			$field = get_post_meta( $post->ID, $value, true );
-			if ( ! empty( $field ) ) {
-				return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
-			} else {
-				return false;
-			}
-		}
-		
+	
 		public function hf_composer_add_meta_box() {
 			add_meta_box(
 				'header-footer-composer-meta-box',
@@ -38,6 +27,8 @@ class Header_Footer_Composer_Meta_Box {
 				
 		
 		public function hf_composer_meta_html( $post) {
+			global $post;
+			$layout_type = get_post_meta( $post->ID, 'hf_composer_layout_type', true );
 			wp_nonce_field( '_hf_composer_nonce', 'hf_composer_nonce' ); ?>
 		
 			<div class="hfc-metabox">
@@ -46,16 +37,16 @@ class Header_Footer_Composer_Meta_Box {
                 </div>
 				<div class="hfc-meta-input">                
 				<select name="hf_composer_layout_type" id="hf_composer_layout_type">
-					<option value="" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === '' ) ? 'selected' : '' ?>><?php echo esc_html('Select Layout Type', 'header-footer-composer'); ?></option>
-					<option value="header" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === 'header' ) ? 'selected' : '' ?>><?php echo esc_html('Header', 'header-footer-composer'); ?></option>
-					<option value="footer" <?php echo (array( $this, 'hf_composer_get_meta')( 'hf_composer_layout_type' ) === 'footer' ) ? 'selected' : '' ?>><?php echo esc_html('Footer', 'header-footer-composer'); ?></option>
+					<option value="" <?php if ( $layout_type === '' ) { echo 'selected'; } ?>><?php echo esc_html('Select Layout Type', 'header-footer-composer'); ?></option>
+					<option value="header" <?php if ( $layout_type === 'header' ) { echo 'selected'; } ?>><?php echo esc_html('Header', 'header-footer-composer'); ?></option>
+					<option value="footer" <?php if ( $layout_type === 'footer' ) { echo 'selected'; } ?>><?php echo esc_html('Footer', 'header-footer-composer'); ?></option>
 				</select>
                 </div>
 			</div>
 			<?php
 		}
 		
-		public function hf_composer_meta_save( $post_id ) {		
+		public function hf_composer_meta_save( $post_id ) {				
 			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;				
 			if ( ! isset( $_POST['hf_composer_nonce'] ) || ! wp_verify_nonce( $_POST['hf_composer_nonce'], '_hf_composer_nonce' ) ) return;			
 			if ( ! current_user_can( 'edit_post', $post_id ) ) return;	
