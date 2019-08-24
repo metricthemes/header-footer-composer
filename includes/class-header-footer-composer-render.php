@@ -99,7 +99,7 @@ class Header_Footer_Composer_Render {
 	}
 	
 	public function remove_header() {
-		$header_id = array($this, 'get_template_id')($type = 'header')[0];	
+		$header_id = $this->get_template_id($type = 'header')[0];	
 		if ($header_id) {
 		remove_action('munk_header', 'munk_header_above_markup', 10);
 		remove_action('munk_header', 'munk_header_primary_markup', 20);
@@ -109,16 +109,16 @@ class Header_Footer_Composer_Render {
 
 	
 	public function new_header() {
-			$header_id = array($this, 'get_template_id')($type = 'header')[0];	
-			if ($header_id) {
-				echo \Elementor\Plugin::$instance->frontend->get_builder_content( $header_id );
-			}
+		$header_id = $this->get_template_id($type = 'header')[0];	
+		if ($header_id) {
+			echo \Elementor\Plugin::$instance->frontend->get_builder_content( $header_id );
+		}
 	}
 
 	
 	
 	public function remove_footer() {
-		$footer_id = array($this, 'get_template_id')($type = 'footer')[0];	
+		$footer_id = $this->get_template_id($type = 'footer')[0];	
 		if ($footer_id) {
 		remove_action('munk_footer', 'munk_footer_markup', 10);
 		}
@@ -126,10 +126,10 @@ class Header_Footer_Composer_Render {
 
 	
 	public function new_footer() {
-			$footer_id = array($this, 'get_template_id')($type = 'footer')[0];	
-			if ($footer_id) {
-				echo \Elementor\Plugin::$instance->frontend->get_builder_content( $footer_id );
-			}
+		$footer_id = $this->get_template_id($type = 'footer')[0];	
+		if ($footer_id) {
+			echo \Elementor\Plugin::$instance->frontend->get_builder_content( $footer_id );
+		}
 	}
 	
 }
