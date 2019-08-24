@@ -16,7 +16,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 	public function get_style_depends() {
 		return [ 'hfc-navmenu-style' ];
 	}	
-	
+		
 	public function get_script_depends() {
 		return [ 'hfc-navmenu-script' ];
 	}	
@@ -130,7 +130,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 					'' => __( 'None', 'header-footer-composer' ),															
 				],
                 'selectors' => [
-                    '{{WRAPPER}} .hfc-navbar > ul > li.has-sub > a:after' => 'content: "{{VALUE}}";',
+                    '{{WRAPPER}} .hfc-navbar > ul > li.menu-item-has-children > a:after' => 'content: "{{VALUE}}";',
                 ],								
 			]
 		);						

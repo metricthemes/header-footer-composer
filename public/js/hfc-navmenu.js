@@ -61,6 +61,27 @@
 })(jQuery);
 
 (function($){
+		  
+/*
+$(window).load(function () {
+
+	var screenwidth = $(window).width();
+	
+	if (screenwidth <= 375) {
+		var toggleheight = $('.hfc-navbar').height();
+		var leftpull = screenwidth - 675;
+		$(".hfc-nav-menu-top").css({"position":"absolute", "width": screenwidth, "left": leftpull, "top": toggleheight, "background-color": "#000000" });
+	}
+	
+	if (screenwidth <= 768) {
+		var toggleheight = $('.hfc-navbar').height();
+		var leftpull = screenwidth - 1000;
+		$(".hfc-nav-menu-top").css({"position":"absolute", "width": screenwidth, "left": leftpull, "top": toggleheight, "background-color": "#000000" });
+	}	
+
+});
+*/
+		  
 $(document).ready(function(){
 
 $(".hfc-navbar").menumaker({

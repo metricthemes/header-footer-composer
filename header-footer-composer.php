@@ -22,7 +22,7 @@
  *
  * Plugin Name:       Header Footer Composer for Elementor
  * Plugin URI:        https://metricthemes.com/header-footer-composer
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Design custom headers and footers for your site using Elementor Page builder.
  * Version:           1.0.0
  * Author:            MetricThemes
  * Author URI:        https://metricthemes.com
