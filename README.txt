@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Design custom headers and footers for your site using  <a href="https://elementor.com/">Elementor Page builder</a>.
+Design custom headers and footers for your site using '[Elementor Page builder](https://elementor.com/)'.
 
 == Description ==
 Most WordPress themes come with a fixed style for their header and footer. But what if you want to create your own custom header or footer as per your liking. You can create a child theme and customize the header/footer code but if you don't like playing with the code then it becomes hard to customize the layout of your site's header or footer. To solve that issue and to design your site's header and footer without using any code you can use the Header Footer Composer for Elementor.
