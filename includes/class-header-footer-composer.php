@@ -177,7 +177,7 @@ class Header_Footer_Composer {
 	public function hf_composer_theme_support() {	
 		if (! current_theme_supports('header-footer-composer')) {			
 		echo '<div class="notice notice-error is-dismissible">';
-			echo '<p>Hello, Unfortunatelty your current theme does not supports Header Footer Composer.</p>';
+			echo '<p>Hello, Unfortunately your current theme does not supports Header Footer Composer.</p>';
 		echo '</div>';		
 		}
 	}	
