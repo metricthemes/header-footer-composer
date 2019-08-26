@@ -8,16 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-24 15:12+0545\n"
-"PO-Revision-Date: 2019-08-24 15:13+0500\n"
+"POT-Creation-Date: 2019-08-24 17:57+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Eazy Po 0.9.5.3\n"
 
 #: header-footer-composer.php:84
 #, php-format
@@ -32,7 +30,7 @@ msgstr ""
 msgid "Header Footer Composer"
 msgstr ""
 
-#: includes/class-header-footer-composer-metabox.php:31
+#: includes/class-header-footer-composer-metabox.php:20
 msgid "Layout Type"
 msgstr ""
 

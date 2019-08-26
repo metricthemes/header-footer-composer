@@ -1,4 +1,6 @@
 === header-footer-composer ===
+Author: etricThemes
+Author URI: https://metricthemes.com
 Contributors: metricthemes, tajim
 Donate link: https://metricthemes.com
 Tags: header, footer, custom header designer, footer builder, elementor, template builder, page builder, landing page header
@@ -40,3 +42,17 @@ Header Footer Composer currently only works with Elementor.
 
 = 1.0 .0 =
 * Initial Release
+
+== Credits & Copyright ==
+
+= WordPress Plugin Boilerplate =
+Licenses: GPL v2 or later  
+Source: https://github.com/DevinVinson/WordPress-Plugin-Boilerplate  
+
+= Elementor Page Builder =
+Licenses: GPLv3  
+Source: https://github.com/elementor/elementor  
+
+= Modernizr =
+Licenses: MIT & BSD  
+Source: http://modernizr.com/ 

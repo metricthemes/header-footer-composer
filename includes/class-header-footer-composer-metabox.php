@@ -47,12 +47,18 @@ class Header_Footer_Composer_Meta_Box {
 		}
 		
 		public function hf_composer_meta_save( $post_id ) {				
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;				
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;							
 			if ( ! isset( $_POST['hf_composer_nonce'] ) || ! wp_verify_nonce( $_POST['hf_composer_nonce'], '_hf_composer_nonce' ) ) return;			
-			if ( ! current_user_can( 'edit_post', $post_id ) ) return;	
-		
-			if ( isset( $_POST['hf_composer_layout_type'] ) )
-				update_post_meta( $post_id, 'hf_composer_layout_type', esc_attr( $_POST['hf_composer_layout_type'] ) );				
+			if ( ! current_user_can( 'edit_post', $post_id ) ) return;			
+											
+			if ( isset( $_POST['hf_composer_layout_type'] )){
+			   	$valid_values = array('header','footer','');
+				$value = sanitize_text_field( $_POST['hf_composer_layout_type'] );
+				if( in_array( $value, $valid_values ) ) {
+					update_post_meta( $post_id, 'hf_composer_layout_type', $value );
+				}
+			}				
+				
 		}
 		
 		

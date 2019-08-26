@@ -20,7 +20,7 @@
  * You should have received a copy of the GNU General Public License along with this program; if not, write
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA 
  *
- * Plugin Name:       Header Footer Composer for Elementor
+ * Plugin Name:       Header Footer Composer
  * Plugin URI:        https://github.com/metricthemes/header-footer-composer
  * Description:       Design custom headers and footers for your site using Elementor Page builder.
  * Version:           1.0.0
