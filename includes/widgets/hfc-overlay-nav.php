@@ -10,8 +10,6 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		parent::__construct($data, $args);	
 		
 		wp_enqueue_style( 'hfc-overlay-nav-style', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/css/hfc-overlay-nav.css', [ 'elementor-frontend' ], HEADER_FOOTER_COMPOSER_VERSION, 'all' );
-		wp_enqueue_script( 'modernizr-custom', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/modernizr.custom.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );
-		wp_enqueue_script( 'jquery-classie', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/classie.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );
 		wp_enqueue_script( 'hfc-overlay-nav', HEADER_FOOTER_COMPOSER_BASE_URL . 'public/js/hfc-overlay-nav.js', array( 'jquery' ), HEADER_FOOTER_COMPOSER_VERSION, true );				
 	}
 	
@@ -20,7 +18,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 	}	
 
 	public function get_script_depends() {
-		return [ 'modernizr-custom,jquery-classie,hfc-overlay-nav' ];
+		return [ 'hfc-overlay-nav' ];
 	}	
 
 	public function get_name() {
@@ -108,7 +106,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 				],
 				'default'		 => '',
                 'selectors' => [
-                    '{{WRAPPER}} #trigger-overlay' => 'float: {{VALUE}};',
+                    '{{WRAPPER}} .hfc-button' => 'float: {{VALUE}};',
                 ],
 			]
 		);										
@@ -127,9 +125,9 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => 'rgba(153,204,51,0.9)',
+				'default' => 'rgba(0,0,0,0.9)',
 				'selectors' => [
-					'{{WRAPPER}} .hfc-overlay' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-overlay.open' => 'background-color: {{VALUE}}',
 				],
 			]
 		);	
@@ -268,7 +266,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} #trigger-overlay' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-button' => 'color: {{VALUE}}',
 				],
 			]
 		);		
@@ -279,7 +277,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 				'label' => __( 'Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #trigger-overlay' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-button' => 'background-color: {{VALUE}}',
 				],
 			]
 		);				
@@ -314,7 +312,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 					'size' => 22,
 				],
 				'selectors' => [
-					'{{WRAPPER}} #trigger-overlay' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);			
@@ -331,7 +329,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 			[
 				'name' => 'hfc_overlay_nav_toggle_style_border',
 				'label' => __( 'Toggle Border', 'header-footer-composer' ),
-				'selector' => '{{WRAPPER}} #trigger-overlay',
+				'selector' => '{{WRAPPER}} .hfc-button',
 			]
 		);		
 		
@@ -342,7 +340,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} #trigger-overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);	
@@ -354,7 +352,7 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} #trigger-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .hfc-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);										
@@ -369,23 +367,24 @@ class HFC_Overlay_Nav_Widget extends Widget_Base {
 		$settings = $this->get_settings();
 		$hfc_menu_id = $settings[ 'hfc_overlay_nav_ed' ];				
 	?>		    
-                 
-		<button id="trigger-overlay" type="button">
-	        <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
+
+		<div class="hfc-overlay-btn-wrap">
+            <div class="hfc-button" id="hfc-toggle">
+				<?php esc_html_e('&#9776;', 'header-footer-composer'); ?>
+            </div>
+        </div>
         
-		<div class="hfc-overlay hfc-overlay-hugeinc">
-			<button type="button" class="overlay-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></button>
-	        <nav id="hfc-overlay-navbar" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">            
+        <div class="hfc-overlay" id="hfc-overlay">        
+	        <nav id="hfc-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">            
 				<?php
                   wp_nav_menu(array(
                     'menu'	  => $hfc_menu_id,
                     'depth'   => 1,
-                    'menu_class' => 'hfc-overlay-nav'
                     ));
                 ?>
-            </nav>            
-		</div>
+            </nav>                
+        </div>
+                 
     
 	<?php			
 	}

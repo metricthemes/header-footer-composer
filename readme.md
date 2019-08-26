@@ -49,7 +49,3 @@ Source: https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
 Elementor Page Builder  
 Licenses: GPLv3  
 Source: https://github.com/elementor/elementor  
-
-Modernizr  
-Licenses: MIT & BSD  
-Source: http://modernizr.com/ 

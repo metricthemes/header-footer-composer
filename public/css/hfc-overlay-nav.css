@@ -1,121 +1,159 @@
-/* Overlay style */
-.hfc-overlay {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(153,204,51,0.9);
-	z-index:9999999;
-}
-#trigger-overlay {
+.hfc-overlay-btn-wrap {
+overflow:hidden;
+clear:both;
 text-align: center;
-display: block;
-margin: 0px auto;
-background:#191919;
-color:#fff;
-cursor:pointer;
-border:none;
 }
-/* Overlay closing cross */
-.hfc-overlay .overlay-close {
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	font-size:70px;
-	overflow: hidden;
-	background:none;
-	border: none;
-	color: #191919;
-	outline: none;
-	z-index: 100;
+.hfc-button {
+  cursor: pointer;
+  background-color:#191919;
+  color:#fff;
+  display:inline-block;
+  padding:3px 12px;
+  font-size:22px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  z-index: 100;
+  transition: opacity .25s ease;
+}
+.hfc-button:hover {
+  opacity: .7;
+}
+.hfc-button.active .top {
+  -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+          transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #FFF;
+}
+.hfc-button.active .middle {
+  opacity: 0;
+  background: #FFF;
+}
+.hfc-button.active .bottom {
+  -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+          transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #FFF;
+}
+.hfc-button span {
+  background: #FF5252;
+  border: none;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .35s ease;
+  cursor: pointer;
+}
+.hfc-button span:nth-of-type(2) {
+  top: 11px;
+}
+.hfc-button span:nth-of-type(3) {
+  top: 22px;
 }
 
-/* Menu style */
+.hfc-overlay {
+  position: fixed;
+  background: #FF5252;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+}
+.hfc-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  z-index:10;
+}
+.hfc-overlay.open li {
+  -webkit-animation: fadeInRight .5s ease forwards;
+          animation: fadeInRight .5s ease forwards;
+  -webkit-animation-delay: .35s;
+          animation-delay: .35s;
+}
+.hfc-overlay.open li:nth-of-type(2) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.hfc-overlay.open li:nth-of-type(3) {
+  -webkit-animation-delay: .45s;
+          animation-delay: .45s;
+}
+.hfc-overlay.open li:nth-of-type(4) {
+  -webkit-animation-delay: .50s;
+          animation-delay: .50s;
+}
 .hfc-overlay nav {
-	text-align: center;
-	position: relative;
-	top: 50%;
-	height: 60%;
-	font-size: 54px;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+  position: relative;
+  height: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
 }
-
 .hfc-overlay ul {
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	display: inline-block;
-	height: 100%;
-	position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
 }
-
 .hfc-overlay ul li {
-	display: block;
-	height: 20%;
-	height: calc(100% / 5);
-	min-height: 54px;
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
 }
-
 .hfc-overlay ul li a {
-	font-weight: 300;
-	display: block;
-	color: #fff;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+  display: block;
+  position: relative;
+  color: #FFF;
+  text-decoration: none;
+  overflow: hidden;
+}
+.hfc-overlay ul li a:hover:after, .hfc-overlay ul li a:focus:after, .hfc-overlay ul li a:active:after {
+  width: 100%;
+}
+.hfc-overlay ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 3px;
+  background: #FFF;
+  transition: .35s;
 }
 
-.hfc-overlay ul li a:hover,
-.hfc-overlay ul li a:focus {
-	color: #e3fcb1;
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
 
-/* Effects */
-.hfc-overlay-hugeinc {
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, visibility 0s 0.5s;
-}
-
-.hfc-overlay-hugeinc.open {
-	opacity: 1;
-	visibility: visible;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
-}
-
-.hfc-overlay-hugeinc nav {
-	-webkit-perspective: 1200px;
-	perspective: 1200px;
-}
-
-.hfc-overlay-hugeinc nav ul {
-	opacity: 0.4;
-	-webkit-transform: translateY(-25%) rotateX(35deg);
-	transform: translateY(-25%) rotateX(35deg);
-	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-	transition: transform 0.5s, opacity 0.5s;
-}
-
-.hfc-overlay-hugeinc.open nav ul {
-	opacity: 1;
-	-webkit-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
-
-.hfc-overlay-hugeinc.close nav ul {
-	-webkit-transform: translateY(25%) rotateX(-35deg);
-	transform: translateY(25%) rotateX(-35deg);
-}
-
-@media screen and (max-height: 30.5em) {
-	.hfc-overlay nav {
-		height: 70%;
-		font-size: 34px;
-	}
-	.hfc-overlay ul li {
-		min-height: 34px;
-	}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
