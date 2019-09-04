@@ -1,9 +1,8 @@
-=== header-footer-composer ===
-Author: etricThemes
+=== Header Footer Composer for Elementor ===
+Author: metricThemes
 Author URI: https://metricthemes.com
 Contributors: metricthemes, tajim
-Donate link: https://metricthemes.com
-Tags: header, footer, custom header designer, footer builder, elementor, template builder, page builder, landing page header
+Tags: custom header builder, footer builder, header, footer, elementor, template builder, page builder, landing page header
 Requires at least: 4.4
 Tested up to: 5.2
 Requires PHP: 5.6
@@ -18,7 +17,7 @@ Most WordPress themes come with a fixed style for their header and footer. But w
 
 Header and Footer Composer for Elementor allows you to design your site's header and footer using Elementor Page Builder.
 
-= Important Note =
+= Important Note =  
 Currently, Header and Footer Composer plugin only works with '[Munk WordPress Theme](https://github.com/metricthemes/munk)' by [@metricthemes](https://metricthemes.com). 
 
 We are working on to add support for more themes in future. 

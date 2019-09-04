@@ -178,7 +178,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#191919',
 				'selectors' => [
-					'{{WRAPPER}} .hfc-navbar' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .hfc-navbar, .hfc-nav-menu-top.open' => 'background-color: {{VALUE}}',
 				],
 			]
 		);	
@@ -481,7 +481,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'name' => 'hfc_nav_menu_dropdown_style_link_border',
 				'label' => __( 'Border', 'header-footer-composer' ),
-				'selector' => '{{WRAPPER}} .hfc-navbar ul ul',
+				'selector' => '{{WRAPPER}} .hfc-navbar ul ul.sub-menu',
 			]
 		);
 		

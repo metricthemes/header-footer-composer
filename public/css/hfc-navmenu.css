@@ -138,7 +138,6 @@ margin-left:6px;
   }
   .hfc-navbar ul li {
     width: 100%;
-    border-top: 1px solid rgba(120, 120, 120, 0.2);
   }
   .hfc-navbar ul ul li,
   .hfc-navbar li:hover > ul > li {
@@ -194,8 +193,10 @@ margin-left:6px;
     display: block;
     margin: 0px auto;
     text-align: center;
-    width: 50px;
     /* float: right; */	
+  }  
+  .hfc-navbar #menu-button.menu-opened {
+  z-index:10;
   }  
   .hfc-navbar #menu-button.menu-opened:after {
     top: 23px;
@@ -272,4 +273,16 @@ margin-left:6px;
   .hfc-navbar .submenu-button.submenu-opened:before {
     display: none;
   }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.hfc-nav-menu-top.open {
+    display: block;
+    position: fixed;
+    width: 100%;	
+    top: 0;
+    left: 0;
+    height: 100vh;
+	padding-top:16%;
+	}
 }
