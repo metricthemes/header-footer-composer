@@ -116,8 +116,9 @@ class Header_Footer_Composer {
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-header-footer-composer-render.php';									
 		
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-header-footer-composer-widgets.php';											
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-header-footer-composer-widgets.php';															
 		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-stickyheader.php';										
 		
 		$this->loader = new Header_Footer_Composer_Loader();
 

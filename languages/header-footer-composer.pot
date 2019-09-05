@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-24 17:57+0545\n"
+"POT-Creation-Date: 2019-09-05 23:45+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,47 +147,47 @@ msgid "Header Footer Layout Composer for Elementor"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:29 includes/widgets/hfc-navmenu.php:63
-#: includes/widgets/hfc-overlay-nav.php:65
+#: includes/widgets/hfc-overlay-nav.php:63
 msgid "Nav Menu"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:50 includes/widgets/hfc-overlay-nav.php:52
+#: includes/widgets/hfc-navmenu.php:50 includes/widgets/hfc-overlay-nav.php:50
 msgid "Select a Menu"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:71 includes/widgets/hfc-overlay-nav.php:73
+#: includes/widgets/hfc-navmenu.php:71 includes/widgets/hfc-overlay-nav.php:71
 msgid "Select Menu"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:83 includes/widgets/hfc-overlay-nav.php:85
+#: includes/widgets/hfc-navmenu.php:83 includes/widgets/hfc-overlay-nav.php:83
 msgid ""
 "<small>Please Go to the Dashboard >> Appereance >> Menus screen to manage "
 "your menus."
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:96 includes/widgets/hfc-navmenu.php:594
-#: includes/widgets/hfc-overlay-nav.php:91
+#: includes/widgets/hfc-navmenu.php:96 includes/widgets/hfc-navmenu.php:595
+#: includes/widgets/hfc-overlay-nav.php:89
 #: includes/widgets/hfc-sitelogo.php:43 includes/widgets/hfc-sitetitle.php:73
 msgid "Alignment"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:100 includes/widgets/hfc-navmenu.php:145
-#: includes/widgets/hfc-navmenu.php:599
-#: includes/widgets/hfc-overlay-nav.php:97
+#: includes/widgets/hfc-navmenu.php:600
+#: includes/widgets/hfc-overlay-nav.php:95
 #: includes/widgets/hfc-sitelogo.php:48 includes/widgets/hfc-sitetitle.php:78
 msgid "Left"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:104 includes/widgets/hfc-navmenu.php:149
-#: includes/widgets/hfc-navmenu.php:603
-#: includes/widgets/hfc-overlay-nav.php:101
+#: includes/widgets/hfc-navmenu.php:604
+#: includes/widgets/hfc-overlay-nav.php:99
 #: includes/widgets/hfc-sitelogo.php:52 includes/widgets/hfc-sitetitle.php:82
 msgid "Center"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:108 includes/widgets/hfc-navmenu.php:153
-#: includes/widgets/hfc-navmenu.php:607
-#: includes/widgets/hfc-overlay-nav.php:105
+#: includes/widgets/hfc-navmenu.php:608
+#: includes/widgets/hfc-overlay-nav.php:103
 #: includes/widgets/hfc-sitelogo.php:56 includes/widgets/hfc-sitetitle.php:86
 msgid "Right"
 msgstr ""
@@ -221,7 +221,7 @@ msgid "Submenu Alignment"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:169
-#: includes/widgets/hfc-overlay-nav.php:120
+#: includes/widgets/hfc-overlay-nav.php:118
 msgid "Main Menu"
 msgstr ""
 
@@ -230,39 +230,39 @@ msgid "Navbar Background Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:190 includes/widgets/hfc-navmenu.php:360
-#: includes/widgets/hfc-overlay-nav.php:141
+#: includes/widgets/hfc-overlay-nav.php:139
 #: includes/widgets/hfc-sitetitle.php:126
 #: includes/widgets/hfc-sitetitle.php:165
 msgid "Typography"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:210 includes/widgets/hfc-navmenu.php:379
-#: includes/widgets/hfc-overlay-nav.php:161
+#: includes/widgets/hfc-overlay-nav.php:159
 msgid "Normal"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:217 includes/widgets/hfc-navmenu.php:386
-#: includes/widgets/hfc-overlay-nav.php:168
+#: includes/widgets/hfc-overlay-nav.php:166
 msgid "Link Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:229 includes/widgets/hfc-navmenu.php:398
-#: includes/widgets/hfc-overlay-nav.php:180
+#: includes/widgets/hfc-overlay-nav.php:178
 msgid "Link Background Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:243 includes/widgets/hfc-navmenu.php:412
-#: includes/widgets/hfc-overlay-nav.php:194
+#: includes/widgets/hfc-overlay-nav.php:192
 msgid "Hover"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:250 includes/widgets/hfc-navmenu.php:419
-#: includes/widgets/hfc-overlay-nav.php:201
+#: includes/widgets/hfc-overlay-nav.php:199
 msgid "Hover Link Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:261 includes/widgets/hfc-navmenu.php:430
-#: includes/widgets/hfc-overlay-nav.php:212
+#: includes/widgets/hfc-overlay-nav.php:210
 msgid "Hover Link Background Color"
 msgstr ""
 
@@ -279,15 +279,15 @@ msgid "Active Link Background Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:313 includes/widgets/hfc-navmenu.php:503
-#: includes/widgets/hfc-navmenu.php:649
-#: includes/widgets/hfc-overlay-nav.php:233
-#: includes/widgets/hfc-overlay-nav.php:353
+#: includes/widgets/hfc-navmenu.php:650
+#: includes/widgets/hfc-overlay-nav.php:231
+#: includes/widgets/hfc-overlay-nav.php:351
 #: includes/widgets/hfc-sitelogo.php:115
 msgid "Padding"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:325 includes/widgets/hfc-navmenu.php:515
-#: includes/widgets/hfc-overlay-nav.php:245
+#: includes/widgets/hfc-overlay-nav.php:243
 #: includes/widgets/hfc-sitelogo.php:127
 msgid "Margin"
 msgstr ""
@@ -304,40 +304,45 @@ msgstr ""
 msgid "Border"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:491 includes/widgets/hfc-navmenu.php:637
-#: includes/widgets/hfc-overlay-nav.php:341
+#: includes/widgets/hfc-navmenu.php:491 includes/widgets/hfc-navmenu.php:638
+#: includes/widgets/hfc-overlay-nav.php:339
 msgid "Border Radius"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:529
-#: includes/widgets/hfc-overlay-nav.php:259
+#: includes/widgets/hfc-overlay-nav.php:257
 msgid "Toggle Button"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:537
-#: includes/widgets/hfc-overlay-nav.php:267
+#: includes/widgets/hfc-overlay-nav.php:265
 #: includes/widgets/hfc-sitetitle.php:149
 msgid "Color"
 msgstr ""
 
 #: includes/widgets/hfc-navmenu.php:549
-#: includes/widgets/hfc-overlay-nav.php:128
-#: includes/widgets/hfc-overlay-nav.php:279
+#: includes/widgets/hfc-overlay-nav.php:126
+#: includes/widgets/hfc-overlay-nav.php:277
+#: includes/widgets/hfc-stickyheader.php:92
 msgid "Background Color"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:568
-#: includes/widgets/hfc-overlay-nav.php:298
+#: includes/widgets/hfc-navmenu.php:569
+#: includes/widgets/hfc-overlay-nav.php:296
 msgid "Size"
 msgstr ""
 
-#: includes/widgets/hfc-navmenu.php:629
-#: includes/widgets/hfc-overlay-nav.php:333
+#: includes/widgets/hfc-navmenu.php:630
+#: includes/widgets/hfc-overlay-nav.php:331
 msgid "Toggle Border"
 msgstr ""
 
-#: includes/widgets/hfc-overlay-nav.php:31
+#: includes/widgets/hfc-overlay-nav.php:29
 msgid "Overlay Nav Menu"
+msgstr ""
+
+#: includes/widgets/hfc-overlay-nav.php:373
+msgid "&#9776;"
 msgstr ""
 
 #: includes/widgets/hfc-sitelogo.php:14 includes/widgets/hfc-sitelogo.php:28
@@ -421,4 +426,62 @@ msgstr ""
 
 #: includes/widgets/hfc-sitetitle.php:137
 msgid "Site Description"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:9
+msgid "Sticky Header"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:17
+msgid "Enable Sticky Header"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:19
+#: includes/widgets/hfc-stickyheader.php:116
+msgid "On"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:20
+#: includes/widgets/hfc-stickyheader.php:117
+msgid "Off"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:31
+msgid "Enabled On"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:37
+msgid "Desktop"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:38
+msgid "Tablet"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:39
+msgid "Mobile"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:61
+msgid "Scroll Distance (px)"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:70
+msgid "Choose the scroll distance to enable Sticky Header Effects"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:114
+msgid "Bottom Border"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:132
+msgid "Border Color"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:145
+msgid "Border Size (px)"
+msgstr ""
+
+#: includes/widgets/hfc-stickyheader.php:154
+msgid "Only adds bottom border to the sticky header."
 msgstr ""

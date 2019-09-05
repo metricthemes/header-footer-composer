@@ -41,7 +41,7 @@ class Header_Footer_Composer_Widgets {
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-sitetitle.php';
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-sitelogo.php';
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-navmenu.php';
-			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-overlay-nav.php';			
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/hfc-overlay-nav.php';						
 		}
 
 	}	

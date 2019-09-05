@@ -171,10 +171,10 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_bgcolor',
 			[
-				'label' => __( 'Navbar Background Color', 'header-footer-composer' ),
+				'label' => __( 'Navbar Background Color', 'header-footer-composer' ),				
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#191919',
 				'selectors' => [
@@ -211,7 +211,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_normal_color',
 			[
 				'label' => __( 'Link Color', 'header-footer-composer' ),
@@ -223,7 +223,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_normal_bgcolor',
 			[
 				'label' => __( 'Link Background Color', 'header-footer-composer' ),
@@ -244,7 +244,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_hover_color',
 			[
 				'label' => __( 'Hover Link Color', 'header-footer-composer' ),
@@ -255,7 +255,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_hover_bgcolor',
 			[
 				'label' => __( 'Hover Link Background Color', 'header-footer-composer' ),
@@ -274,7 +274,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_active_color',
 			[
 				'label' => __( 'Active Link Color', 'header-footer-composer' ),
@@ -285,7 +285,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_style_active_bgcolor',
 			[
 				'label' => __( 'Active Link Background Color', 'header-footer-composer' ),
@@ -341,7 +341,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);				
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_bgcolor',
 			[
 				'label' => __( 'Dropdown Background Color', 'header-footer-composer' ),
@@ -380,7 +380,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_normal_color',
 			[
 				'label' => __( 'Link Color', 'header-footer-composer' ),
@@ -392,7 +392,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_normal_bgcolor',
 			[
 				'label' => __( 'Link Background Color', 'header-footer-composer' ),
@@ -413,7 +413,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_hover_color',
 			[
 				'label' => __( 'Hover Link Color', 'header-footer-composer' ),
@@ -424,7 +424,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_hover_bgcolor',
 			[
 				'label' => __( 'Hover Link Background Color', 'header-footer-composer' ),
@@ -443,7 +443,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_active_color',
 			[
 				'label' => __( 'Active Link Color', 'header-footer-composer' ),
@@ -454,7 +454,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			]
 		);		
 		
-		$this->add_control(
+		$this->add_responsive_control(
 			'hfc_nav_menu_dropdown_style_active_bgcolor',
 			[
 				'label' => __( 'Active Link Background Color', 'header-footer-composer' ),
@@ -548,6 +548,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background Color', 'header-footer-composer' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#191919',				
 				'selectors' => [
 					'{{WRAPPER}} .hfc-navbar #menu-button' => 'background-color: {{VALUE}}',
 				],
@@ -591,7 +592,7 @@ class HFC_Nav_Menu_Widget extends Widget_Base {
 		
 		$this->add_control(
 			'hfc_nav_menu_toggle_style_align', [
-				'label'			 =>esc_html__( 'Alignment', 'header-footer-composer' ),
+				'label'			 => esc_html__( 'Alignment', 'header-footer-composer' ),
 				'type'			 => Controls_Manager::CHOOSE,
 				'options'		 => [
 

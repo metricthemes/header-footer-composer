@@ -9,3 +9,14 @@
     -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
     transition: opacity 0.5s, visibility 0s 0.5s;
 }
+.hfc-sticky-header-on {
+transition: 0.300s ease-out;
+}
+.hfc-sticky-header {
+    position: fixed !important;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+	transform: translateY(0%);	
+	transition: .35s ease-out;	
+}
